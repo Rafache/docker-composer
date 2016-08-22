@@ -1,4 +1,4 @@
-#Composer
+# Composer with Docker
 
 Docker image to run the composer with php7 Alpine.
 
