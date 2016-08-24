@@ -10,6 +10,10 @@ RUN chmod a+x /usr/local/bin/composer
 ADD http://codeception.com/codecept.phar /usr/local/bin/codecept
 RUN chmod a+x /usr/local/bin/codecept
 
+#INSTALL PHPUNIT
+ADD https://phar.phpunit.de/phpunit.phar /usr/local/bin/phpunit
+RUN chmod a+x /usr/local/bin/phpunit
+
 #INSTALL DEPLOYER
 ADD http://deployer.org/deployer.phar /usr/local/bin/dep
 RUN chmod a+x /usr/local/bin/dep
