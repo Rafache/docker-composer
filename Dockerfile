@@ -3,7 +3,7 @@ FROM php:7-alpine
 MAINTAINER Rafache
 
 #INSTALL PHP EXTENSIONS
-RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-install curl zip pdo pdo_mysql
 
 # INSTALL COMPOSER
 ADD https://getcomposer.org/composer.phar /usr/local/bin/composer
