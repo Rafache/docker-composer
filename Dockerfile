@@ -2,6 +2,9 @@ FROM php:7-alpine
 
 MAINTAINER Rafache
 
+#INSTALL PHP EXTENSIONS
+RUN docker-ext-install pdo pdo_mysq
+
 # INSTALL COMPOSER
 ADD https://getcomposer.org/composer.phar /usr/local/bin/composer
 RUN chmod a+x /usr/local/bin/composer
