@@ -1,6 +1,6 @@
 # PHP tools with Docker
 
-Docker image to run Composer, Codeception, Deployer, PHP Cs Fixer, PHP Messe Detector.
+Docker image to run Composer, Codeception, Deployer, PHP Cs Fixer, PHP Mess Detector.
 
 ## Usage
 
