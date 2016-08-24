@@ -1,11 +1,11 @@
-# Composer with Docker
+# PHP tools with Docker (
 
-Docker image to run the composer with php7 Alpine.
+Docker image to run Composer, Codeception, Deployer, PHP Cs Fixer, PHP Messe Detector).
 
 ## Usage
 
 ```bash
-docker run --rm -v /path/to/project/:/data rafache/composer install --no-dev
+docker run --rm -v /path/to/project/:/data rafache/composer composer install --no-dev
 ```
 
 ## License
