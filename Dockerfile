@@ -2,6 +2,10 @@ FROM php:7-alpine
 
 MAINTAINER Rafache
 
+RUN apt-get update \
+    && apt-get install -y zlib1g-dev \
+  	&& rm -rf /var/lib/apt/lists/*
+
 #INSTALL PHP EXTENSIONS
 RUN docker-php-ext-install curl zip pdo pdo_mysql
 
