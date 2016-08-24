@@ -2,7 +2,7 @@ FROM php:7-alpine
 
 MAINTAINER Rafache
 
-RUN apk --update add zlib1g-dev \
+RUN apk --update add zlib-dev \
     && rm -rf /var/cache/apk/*
 
 #INSTALL PHP EXTENSIONS
