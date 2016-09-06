@@ -23,7 +23,7 @@ RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev lib
       --with-jpeg-dir=/usr/include/ && \
     docker-php-ext-install gd && \
     apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
-
+    
 #INSTALL OTHERS PHP EXTENSIONS
 RUN docker-php-ext-install curl pdo pdo_mysql
 
@@ -53,5 +53,9 @@ RUN chmod a+x /usr/local/bin/php-cs-fixer
 #INSTALL PHP MESS DETECTOR
 ADD http://static.phpmd.org/php/latest/phpmd.phar /usr/local/bin/phpmd
 RUN chmod a+x /usr/local/bin/phpmd
+
+#INSTALL SYMFONY
+ADD https://symfony.com/installer /usr/local/bin/symfony
+RUN chmod a+x /usr/local/bin/symfony
 
 WORKDIR /data
