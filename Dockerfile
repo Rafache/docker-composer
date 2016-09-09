@@ -50,6 +50,12 @@ RUN chmod a+x /usr/local/bin/dep
 ADD https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v1.12.0/php-cs-fixer.phar /usr/local/bin/php-cs-fixer
 RUN chmod a+x /usr/local/bin/php-cs-fixer
 
+#INSTALL PHP CODESNIFFER
+ADD https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar /usr/local/bin/phpcs
+RUN chmod a+x /usr/local/bin/phpcs
+ADD https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar /usr/local/bin/phpcbf
+RUN chmod a+x /usr/local/bin/phpcbf
+
 #INSTALL PHP MESS DETECTOR
 ADD http://static.phpmd.org/php/latest/phpmd.phar /usr/local/bin/phpmd
 RUN chmod a+x /usr/local/bin/phpmd
