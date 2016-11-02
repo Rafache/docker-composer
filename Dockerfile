@@ -2,10 +2,6 @@ FROM php:7-alpine
 
 MAINTAINER Rafache
 
-FROM php:7-alpine
-
-MAINTAINER Rafache
-
 #INSTALL ZIP
 RUN apk add --no-cache zlib-dev && \
     docker-php-ext-install zip
@@ -59,6 +55,10 @@ RUN chmod a+x /usr/local/bin/phpcbf
 #INSTALL PHP MESS DETECTOR
 ADD http://static.phpmd.org/php/latest/phpmd.phar /usr/local/bin/phpmd
 RUN chmod a+x /usr/local/bin/phpmd
+
+#INSTALL PHP METRICS
+ADD https://github.com/phpmetrics/PhpMetrics/releases/download/v2.0.0-rc/phpmetrics.phar /usr/local/bin/phpmetrics
+RUN chmod a+x /usr/local/bin/phpmetrics
 
 #INSTALL SYMFONY
 ADD https://symfony.com/installer /usr/local/bin/symfony
