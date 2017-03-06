@@ -1,8 +1,4 @@
-FROM php:7-alpine
-
-MAINTAINER Rafache
-
-FROM php:7-alpine
+FROM php:7.0-alpine
 
 MAINTAINER Rafache
 
@@ -24,8 +20,11 @@ RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev lib
     docker-php-ext-install gd && \
     apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
 
-#INSTALL OTHERS PHP EXTENSIONS
-RUN docker-php-ext-install curl pdo pdo_mysql
+#INSTALL CURL
+RUN apk add --no-cache curl-dev && \
+    docker-php-ext-install curl
+
+RUN docker-php-ext-install pdo pdo_mysql
 
 #CLEAN
 RUN rm -rf /var/cache/apk/*
