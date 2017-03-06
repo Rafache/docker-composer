@@ -24,16 +24,16 @@ RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev lib
     docker-php-ext-install gd && \
     apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
 
-# Set custom PHP overrides
-RUN { \
-        echo 'memory_limit=-1'; \
-    } > /usr/local/etc/php/conf.d/php.ini
-
 #INSTALL OTHERS PHP EXTENSIONS
 RUN docker-php-ext-install curl pdo pdo_mysql
 
 #CLEAN
 RUN rm -rf /var/cache/apk/*
+
+# Set custom PHP overrides
+RUN { \
+        echo 'memory_limit=-1'; \
+    } > /usr/local/etc/php/conf.d/php.ini
 
 # INSTALL COMPOSER
 ADD https://getcomposer.org/composer.phar /usr/local/bin/composer
