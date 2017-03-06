@@ -2,6 +2,10 @@ FROM php:7-alpine
 
 MAINTAINER Rafache
 
+FROM php:7-alpine
+
+MAINTAINER Rafache
+
 #INSTALL ZIP
 RUN apk add --no-cache zlib-dev && \
     docker-php-ext-install zip
@@ -19,7 +23,12 @@ RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev lib
       --with-jpeg-dir=/usr/include/ && \
     docker-php-ext-install gd && \
     apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
-    
+
+# Set custom PHP overrides
+RUN { \
+        echo 'memory_limit=-1'; \
+    } > /usr/local/etc/php/conf.d/php.ini
+
 #INSTALL OTHERS PHP EXTENSIONS
 RUN docker-php-ext-install curl pdo pdo_mysql
 
@@ -55,10 +64,6 @@ RUN chmod a+x /usr/local/bin/phpcbf
 #INSTALL PHP MESS DETECTOR
 ADD http://static.phpmd.org/php/latest/phpmd.phar /usr/local/bin/phpmd
 RUN chmod a+x /usr/local/bin/phpmd
-
-#INSTALL PHP METRICS
-ADD https://github.com/phpmetrics/PhpMetrics/releases/download/v2.0.0-rc/phpmetrics.phar /usr/local/bin/phpmetrics
-RUN chmod a+x /usr/local/bin/phpmetrics
 
 #INSTALL SYMFONY
 ADD https://symfony.com/installer /usr/local/bin/symfony
