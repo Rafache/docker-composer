@@ -25,7 +25,7 @@ make check
 
 ```bash
 docker run --rm -v /path/to/project/:/data -v ~/.ssh:/root/.ssh:ro rafache/php-cli php -v
-docker run --rm -v /path/to/project/:/data -v ~/.ssh:/root/.ssh:ro rafache/php-cli composer
+docker run --rm -v /path/to/project/:/data -v ~/.composer:/root/.composer -v ~/.ssh:/root/.ssh:ro rafache/php-cli composer
 docker run --rm -v /path/to/project/:/data -v ~/.ssh:/root/.ssh:ro rafache/php-cli codecept
 docker run --rm -v /path/to/project/:/data -v ~/.ssh:/root/.ssh:ro rafache/php-cli phpunit
 docker run --rm -v /path/to/project/:/data -v ~/.ssh:/root/.ssh:ro rafache/php-cli dep
