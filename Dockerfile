@@ -4,7 +4,7 @@ MAINTAINER Rafache
 
 #INSTALL ZIP
 RUN apk add --no-cache zlib-dev && \
-    docker-php-ext-install zip
+    docker-php-ext-install zip git
 
 #INSTALL MCRYPT
 RUN apk add --no-cache libmcrypt-dev && \
