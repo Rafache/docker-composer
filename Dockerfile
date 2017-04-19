@@ -24,7 +24,7 @@ RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev lib
 RUN apk add --no-cache curl-dev && \
     docker-php-ext-install curl
 
-RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-install pdo pdo_mysql bcmath
 
 #CLEAN
 RUN rm -rf /var/cache/apk/*
