@@ -2,6 +2,9 @@ FROM php:7.0-alpine
 
 MAINTAINER Rafache
 
+#GIT
+RUN apk add --no-cache git
+
 #INSTALL ZIP
 RUN apk add --no-cache zlib-dev && \
     docker-php-ext-install zip git
