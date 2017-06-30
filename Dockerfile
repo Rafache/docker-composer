@@ -7,7 +7,7 @@ RUN apk add --no-cache git
 
 #INSTALL ZIP
 RUN apk add --no-cache zlib-dev && \
-    docker-php-ext-install zip git
+    docker-php-ext-install zip
 
 #INSTALL MCRYPT
 RUN apk add --no-cache libmcrypt-dev && \
