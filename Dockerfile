@@ -68,7 +68,8 @@ ADD http://static.phpmd.org/php/latest/phpmd.phar /usr/local/bin/phpmd
 RUN chmod a+x /usr/local/bin/phpmd
 
 #INSTALL PHPMETRICS
-RUN composer global require 'phpmetrics/phpmetrics'
+ADD https://github.com/phpmetrics/PhpMetrics/releases/download/v2.2.0/phpmetrics.phar /usr/local/bin/phpmetrics
+RUN chmod a+x /usr/local/bin/phpmetrics
 
 #INSTALL SYMFONY
 ADD https://symfony.com/installer /usr/local/bin/symfony

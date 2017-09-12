@@ -1,5 +1,5 @@
 build:
-	docker build -t rafache/php-cli .
+	docker build -t registry.gitlab.com/rafache/docker/php-cli .
 
 check:
-	docker run --rm rafache/php-cli php -v
+	docker run --rm registry.gitlab.com/rafache/docker/php-cli php -v
