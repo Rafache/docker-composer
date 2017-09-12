@@ -67,6 +67,9 @@ RUN chmod a+x /usr/local/bin/phpcbf
 ADD http://static.phpmd.org/php/latest/phpmd.phar /usr/local/bin/phpmd
 RUN chmod a+x /usr/local/bin/phpmd
 
+#INSTALL PHPMETRICS
+composer global require 'phpmetrics/phpmetrics'
+
 #INSTALL SYMFONY
 ADD https://symfony.com/installer /usr/local/bin/symfony
 RUN chmod a+x /usr/local/bin/symfony
