@@ -3,7 +3,7 @@ FROM php:7.0-alpine
 MAINTAINER Rafache
 
 #GIT
-RUN apk add --no-cache git
+RUN apk add --no-cache git bash
 
 #INSTALL ZIP
 RUN apk add --no-cache zlib-dev && \
@@ -74,5 +74,9 @@ RUN chmod a+x /usr/local/bin/phpmetrics
 #INSTALL SYMFONY
 ADD https://symfony.com/installer /usr/local/bin/symfony
 RUN chmod a+x /usr/local/bin/symfony
+
+#INSTALL mixed-content-scan
+RUN composer global require bramus/mixed-content-scan:~2.8
+RUN ln -s /root/.composer/vendor/bin/mixed-content-scan /usr/local/bin/mixed-content-scan
 
 WORKDIR /data
