@@ -81,6 +81,6 @@ RUN ln -s /root/.composer/vendor/bin/mixed-content-scan /usr/local/bin/mixed-con
 
 #INSTALL php7cc
 RUN composer global require sstalle/php7cc
-RUN ln -s /root/.composer/vendor/bin/php7ccn /usr/local/bin/php7cc
+RUN ln -s /root/.composer/vendor/bin/php7cc /usr/local/bin/php7cc
 
 WORKDIR /data
