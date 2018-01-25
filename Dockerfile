@@ -79,4 +79,8 @@ RUN chmod a+x /usr/local/bin/symfony
 RUN composer global require bramus/mixed-content-scan:~2.8
 RUN ln -s /root/.composer/vendor/bin/mixed-content-scan /usr/local/bin/mixed-content-scan
 
+#INSTALL php7cc
+RUN composer global require sstalle/php7cc
+RUN ln -s /root/.composer/vendor/bin/php7ccn /usr/local/bin/php7cc
+
 WORKDIR /data
