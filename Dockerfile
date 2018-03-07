@@ -53,6 +53,10 @@ RUN chmod a+x /usr/local/bin/phpunit
 ADD http://deployer.org/deployer.phar /usr/local/bin/dep
 RUN chmod a+x /usr/local/bin/dep
 
+# INSTALL PHP-CS
+ADD https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar /usr/local/bin/phpcs
+ADD https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar /usr/local/bin/phpcbf
+
 #INSTALL PHP-CS-FIXER
 ADD https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v1.12.0/php-cs-fixer.phar /usr/local/bin/php-cs-fixer
 RUN chmod a+x /usr/local/bin/php-cs-fixer
